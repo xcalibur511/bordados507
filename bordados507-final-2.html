@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>BORDADOS 507 | Bordados · DTF · Personalizados · Aguadulce, Panamá</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#08080f;--bg2:#0f0f1c;--bg3:#161626;--card:#1c1c30;
+  --pink:#e91e8c;--pink-dk:#b5166d;--pink-glow:rgba(233,30,140,.3);
+  --cyan:#00d4f5;--cyan-dk:#009fb8;
+  --yellow:#ffd600;--yellow-dk:#c9aa00;
+  --white:#ffffff;--off:#c8c8d8;--muted:#5a5a7a;
+  --border:rgba(255,255,255,.08);
+  --fh:'Bebas Neue',sans-serif;
+  --fc:'Barlow Condensed',sans-serif;
+  --fb:'Barlow',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:var(--fb);font-size:16px;overflow-x:hidden;cursor:none}
+
+/* ── CUSTOM CURSOR ── */
+.cursor{position:fixed;width:12px;height:12px;background:var(--pink);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .2s,height .2s,background .2s}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--pink);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .15s,width .25s,height .25s,opacity .2s;opacity:.5}
+body:hover .cursor{opacity:1}
+.cursor.clicked{transform:translate(-50%,-50%) scale(.7)}
+a:hover~.cursor,.button:hover~.cursor{transform:translate(-50%,-50%) scale(2)}
+
+/* ── LOADER ── */
+.loader{position:fixed;inset:0;background:var(--bg);z-index:10000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;transition:opacity .5s,visibility .5s}
+.loader.gone{opacity:0;visibility:hidden}
+.loader-logo{animation:pulse 1s ease-in-out infinite}
+.loader-bar{width:200px;height:3px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+.loader-fill{height:100%;background:linear-gradient(90deg,var(--pink),var(--cyan));border-radius:2px;animation:load 1.8s ease-in-out forwards}
+@keyframes load{from{width:0}to{width:100%}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:.9rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:all .3s;background:transparent}
+nav.scrolled{background:rgba(8,8,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.nav-logo-mark{width:46px;height:46px;flex-shrink:0}
+.nav-brand{font-family:var(--fh);font-size:1.3rem;letter-spacing:3px;color:var(--white);line-height:1}
+.nav-brand span{color:var(--pink)}
+.nav-sub{font-family:var(--fc);font-size:.55rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:600}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul a{color:var(--off);text-decoration:none;font-family:var(--fc);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;transition:color .2s;position:relative}
+nav ul a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--pink);transition:width .3s}
+nav ul a:hover,nav ul a.active{color:var(--white)}
+nav ul a:hover::after,nav ul a.active::after{width:100%}
+.nav-order{font-family:var(--fh);font-size:.95rem;letter-spacing:2px;padding:.55rem 1.5rem;background:var(--pink);color:#fff;border:none;border-radius:4px;cursor:none;text-decoration:none;transition:all .2s;box-shadow:0 0 20px var(--pink-glow)}
+.nav-order:hover{background:var(--pink-dk);box-shadow:0 0 30px var(--pink-glow)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem 3rem 4rem;position:relative;overflow:hidden}
+.hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,var(--pink-glow) 0%,transparent 70%);top:-100px;right:-100px;pointer-events:none;animation:floatGlow 6s ease-in-out infinite}
+.hero-glow2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,245,.12) 0%,transparent 70%);bottom:-50px;left:30%;pointer-events:none;animation:floatGlow 8s ease-in-out infinite reverse}
+@keyframes floatGlow{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,20px)}}
+.hero-grid-lines{position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+
+.hero-left{position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--pink);background:rgba(233,30,140,.08);color:var(--pink);font-family:var(--fc);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;padding:.35rem 1rem;border-radius:2px;margin-bottom:1.5rem}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--pink);border-radius:50%;animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero h1{font-family:var(--fh);font-size:clamp(4rem,8vw,9rem);line-height:.88;letter-spacing:2px;margin-bottom:.5rem}
+.hero h1 .l1{display:block;color:var(--white)}
+.hero h1 .l2{display:block;color:var(--pink)}
+.hero h1 .l3{display:block;color:var(--cyan)}
+.typed-wrap{font-family:var(--fc);font-size:1.1rem;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);font-weight:600;margin:.75rem 0 1.5rem;min-height:1.6em}
+.typed-cursor{display:inline-block;background:var(--yellow);width:2px;height:1.1em;vertical-align:middle;animation:blink .8s step-end infinite}
+.hero-desc{font-size:1rem;color:var(--off);max-width:420px;line-height:1.8;font-weight:300;margin-bottom:2.5rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.cta-p{display:inline-flex;align-items:center;gap:.5rem;background:var(--pink);color:#fff;font-family:var(--fh);font-size:1.1rem;letter-spacing:3px;padding:.9rem 2rem;border-radius:4px;text-decoration:none;cursor:none;transition:all .2s;box-shadow:0 0 30px var(--pink-glow)}
+.cta-p:hover{background:var(--pink-dk);transform:translateY(-2px);box-shadow:0 0 40px var(--pink-glow)}
+.cta-wa{display:inline-flex;align-items:center;gap:.5rem;background:#25d366;color:#fff;font-family:var(--fh);font-size:1.1rem;letter-spacing:3px;padding:.9rem 2rem;border-radius:4px;text-decoration:none;cursor:none;transition:all .2s}
+.cta-wa:hover{background:#128c7e;transform:translateY(-2px)}
+.cta-out{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(255,255,255,.3);color:var(--off);font-family:var(--fh);font-size:1.1rem;letter-spacing:3px;padding:.9rem 2rem;border-radius:4px;text-decoration:none;cursor:none;transition:all .2s}
+.cta-out:hover{border-color:var(--white);color:var(--white)}
+.hero-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:2rem}
+.hbadge{padding:.28rem .9rem;font-family:var(--fc);font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;border-radius:30px}
+.hbadge.p{background:rgba(233,30,140,.15);color:var(--pink);border:1px solid rgba(233,30,140,.3)}
+.hbadge.c{background:rgba(0,212,245,.12);color:var(--cyan);border:1px solid rgba(0,212,245,.25)}
+.hbadge.y{background:rgba(255,214,0,.12);color:var(--yellow);border:1px solid rgba(255,214,0,.25)}
+.hbadge.w{background:rgba(255,255,255,.06);color:var(--off);border:1px solid var(--border)}
+
+.hero-right{display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+.logo-stage{position:relative}
+.logo-main-svg{width:320px;height:320px;filter:drop-shadow(0 30px 60px rgba(233,30,140,.4));animation:floatLogo 4s ease-in-out infinite}
+@keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.logo-orbit{position:absolute;inset:-30px;border:1px dashed rgba(233,30,140,.2);border-radius:50%;animation:spin 20s linear infinite}
+.logo-orbit2{position:absolute;inset:-60px;border:1px dashed rgba(0,212,245,.1);border-radius:50%;animation:spin 30s linear infinite reverse}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.logo-dot{position:absolute;width:10px;height:10px;background:var(--pink);border-radius:50%;top:50%;left:-5px;transform:translateY(-50%);box-shadow:0 0 10px var(--pink)}
+.logo-dot2{position:absolute;width:8px;height:8px;background:var(--cyan);border-radius:50%;bottom:-34px;right:50%;box-shadow:0 0 8px var(--cyan)}
+.years-float{position:absolute;top:-10px;right:-20px;background:var(--yellow);color:var(--bg);font-family:var(--fh);font-size:.8rem;letter-spacing:1px;padding:.5rem 1rem;border-radius:6px;text-align:center;line-height:1.3;box-shadow:0 8px 24px rgba(255,214,0,.3);animation:floatBadge 3s ease-in-out infinite}
+.rating-float{position:absolute;bottom:10px;left:-25px;background:var(--bg3);border:1px solid var(--border);color:var(--white);font-family:var(--fc);font-size:.8rem;padding:.5rem 1rem;border-radius:6px;line-height:1.3;animation:floatBadge 3.5s ease-in-out infinite reverse}
+@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* ── STATS ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stat-item{padding:2rem;text-align:center;border-right:1px solid var(--border);position:relative;overflow:hidden}
+.stat-item:last-child{border-right:none}
+.stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.stat-item:nth-child(1)::before{background:var(--pink)}
+.stat-item:nth-child(2)::before{background:var(--cyan)}
+.stat-item:nth-child(3)::before{background:var(--yellow)}
+.stat-item:nth-child(4)::before{background:rgba(255,255,255,.3)}
+.stat-val{font-family:var(--fh);font-size:3rem;line-height:1;display:block}
+.stat-item:nth-child(1) .stat-val{color:var(--pink)}
+.stat-item:nth-child(2) .stat-val{color:var(--cyan)}
+.stat-item:nth-child(3) .stat-val{color:var(--yellow)}
+.stat-item:nth-child(4) .stat-val{color:var(--white)}
+.stat-lbl{font-family:var(--fc);font-size:.65rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:.3rem}
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-l{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-l.visible{opacity:1;transform:translateX(0)}
+.reveal-r{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-r.visible{opacity:1;transform:translateX(0)}
+.reveal-s{opacity:0;transform:scale(.92);transition:opacity .6s ease,transform .6s ease}
+.reveal-s.visible{opacity:1;transform:scale(1)}
+
+/* ── SECTION COMMON ── */
+.section{padding:6rem 3rem}
+.sl{font-family:var(--fc);font-size:.7rem;letter-spacing:4px;text-transform:uppercase;font-weight:700;margin-bottom:.6rem;display:flex;align-items:center;gap:.6rem}
+.sl::before{content:'';width:24px;height:2px;background:currentColor}
+.sl.p{color:var(--pink)}.sl.c{color:var(--cyan)}.sl.y{color:var(--yellow)}
+.sec-title{font-family:var(--fh);font-size:clamp(2.8rem,5vw,5.5rem);line-height:.9;margin-bottom:3rem}
+
+/* ── SERVICES ── */
+#servicios{background:var(--bg)}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.scard{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:2rem;position:relative;overflow:hidden;transition:all .3s;cursor:none}
+.scard:hover{border-color:var(--pink);transform:translateY(-8px);box-shadow:0 20px 40px rgba(233,30,140,.15)}
+.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .3s}
+.scard:hover::before{opacity:1}
+.scard.p::before{background:var(--pink)}.scard.c::before{background:var(--cyan)}.scard.y::before{background:var(--yellow)}.scard.k::before{background:var(--white)}
+.scard-num{font-family:var(--fh);font-size:5rem;color:rgba(255,255,255,.04);position:absolute;bottom:-.5rem;right:.5rem;line-height:1;pointer-events:none}
+.scard-icon{width:48px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem}
+.scard.p .scard-icon{background:rgba(233,30,140,.15)}.scard.c .scard-icon{background:rgba(0,212,245,.12)}.scard.y .scard-icon{background:rgba(255,214,0,.12)}.scard.k .scard-icon{background:rgba(255,255,255,.08)}
+.scard h3{font-family:var(--fh);font-size:1.8rem;letter-spacing:1px;margin-bottom:.6rem;color:var(--white)}
+.scard p{font-size:.85rem;color:var(--off);line-height:1.7;font-weight:300}
+.scard-tag{display:inline-block;margin-top:1rem;font-family:var(--fc);font-size:.65rem;letter-spacing:1.5px;font-weight:700;padding:.2rem .7rem;border-radius:2px}
+.scard.p .scard-tag{background:rgba(233,30,140,.2);color:var(--pink)}.scard.c .scard-tag{background:rgba(0,212,245,.15);color:var(--cyan)}.scard.y .scard-tag{background:rgba(255,214,0,.15);color:var(--yellow)}.scard.k .scard-tag{background:rgba(255,255,255,.08);color:var(--off)}
+
+/* ── SHIRT VISUALIZER ── */
+#visualizer{background:var(--bg2);padding:6rem 3rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.viz-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto}
+.viz-shirt-wrap{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+.viz-shirt{transition:fill .4s ease}
+.color-swatches{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+.swatch{width:34px;height:34px;border-radius:50%;cursor:none;transition:transform .2s,box-shadow .2s;border:2px solid transparent}
+.swatch:hover{transform:scale(1.2)}
+.swatch.active{border-color:var(--white);box-shadow:0 0 0 3px rgba(255,255,255,.3)}
+.swatch-label{font-family:var(--fc);font-size:.65rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;text-align:center}
+.viz-info{display:flex;flex-direction:column;gap:1.2rem}
+.viz-info h2{font-family:var(--fh);font-size:clamp(2.5rem,4vw,4.5rem);line-height:.9}
+.viz-info p{color:var(--off);font-size:.9rem;line-height:1.75;font-weight:300}
+.dtf-features{display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem}
+.dtff{display:flex;align-items:center;gap:.7rem;font-family:var(--fc);font-size:.88rem;font-weight:600;color:var(--off)}
+.dtff::before{content:'✓';background:var(--pink);color:#fff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:900;flex-shrink:0}
+
+/* ── PROCESS ── */
+.hiw{background:var(--bg);padding:6rem 3rem}
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:1rem;position:relative}
+.steps-row::before{content:'';position:absolute;top:40px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,var(--pink),var(--cyan),var(--yellow),rgba(255,255,255,.2));z-index:0}
+.step-card{padding:2rem 1.5rem;text-align:center;position:relative;z-index:1}
+.step-dot{width:24px;height:24px;border-radius:50%;border:2px solid;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;background:var(--bg)}
+.step-card:nth-child(1) .step-dot{border-color:var(--pink);box-shadow:0 0 12px var(--pink)}
+.step-card:nth-child(2) .step-dot{border-color:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.step-card:nth-child(3) .step-dot{border-color:var(--yellow);box-shadow:0 0 12px var(--yellow)}
+.step-card:nth-child(4) .step-dot{border-color:var(--off);box-shadow:0 0 12px rgba(200,200,216,.3)}
+.step-dot span{font-family:var(--fh);font-size:.85rem}
+.step-card:nth-child(1) .step-dot span{color:var(--pink)}
+.step-card:nth-child(2) .step-dot span{color:var(--cyan)}
+.step-card:nth-child(3) .step-dot span{color:var(--yellow)}
+.step-card:nth-child(4) .step-dot span{color:var(--off)}
+.step-icon{font-size:2rem;margin-bottom:.75rem;display:block}
+.step-card h3{font-family:var(--fh);font-size:1.4rem;letter-spacing:1px;margin-bottom:.5rem;color:var(--white)}
+.step-card p{font-size:.8rem;color:var(--off);line-height:1.65;font-weight:300}
+
+/* ── GALLERY ── */
+#gallery{background:var(--bg2);padding:6rem 3rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.gallery-item{aspect-ratio:1;border-radius:8px;overflow:hidden;cursor:none;position:relative;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.gallery-item:hover{border-color:var(--pink);box-shadow:0 0 30px rgba(233,30,140,.2)}
+.gallery-item:hover .gal-overlay{opacity:1}
+.gallery-item svg{transition:transform .3s}
+.gallery-item:hover svg{transform:scale(1.05)}
+.gal-overlay{position:absolute;inset:0;background:rgba(233,30,140,.85);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;flex-direction:column;gap:.5rem}
+.gal-overlay span{font-family:var(--fh);font-size:1.2rem;letter-spacing:2px;color:#fff}
+.gal-overlay small{font-size:.7rem;letter-spacing:2px;color:rgba(255,255,255,.7);font-family:var(--fc);text-transform:uppercase}
+.gallery-item.featured{grid-column:span 1;grid-row:span 2;aspect-ratio:auto}
+
+/* ── FAQ ── */
+#faq{background:var(--bg);padding:6rem 3rem}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:1000px;margin:0 auto}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--pink)}
+.faq-q{padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;cursor:none;gap:1rem}
+.faq-q span{font-family:var(--fc);font-size:.95rem;font-weight:700;color:var(--white);letter-spacing:.5px}
+.faq-icon{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;font-size:.8rem;color:var(--muted)}
+.faq-item.open .faq-icon{background:var(--pink);border-color:var(--pink);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 1.5rem}
+.faq-item.open .faq-a{max-height:200px;padding:.5rem 1.5rem 1.2rem}
+.faq-a p{font-size:.85rem;color:var(--off);line-height:1.7;font-weight:300}
+
+/* ── ORDER ── */
+#order{background:var(--bg2);padding:6rem 3rem}
+.order-inner{max-width:1060px;margin:0 auto}
+/* Multi-step */
+.steps-nav{display:flex;gap:0;margin-bottom:3rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.snav{flex:1;padding:.9rem;text-align:center;font-family:var(--fc);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--muted);transition:all .2s;position:relative;cursor:none}
+.snav.active{background:var(--pink);color:#fff}
+.snav::after{content:attr(data-n);position:absolute;top:.4rem;left:50%;transform:translateX(-50%);font-size:.55rem;color:inherit;opacity:.7;font-family:var(--fh)}
+.form-step{display:none}.form-step.active{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.form-step.single{display:none}.form-step.single.active{display:block}
+.fc{display:flex;flex-direction:column;gap:1.1rem}
+.fg{display:flex;flex-direction:column;gap:.4rem}
+.fg label{font-family:var(--fc);font-size:.62rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.fg input,.fg select,.fg textarea{background:var(--bg);border:1px solid var(--border);color:var(--white);font-family:var(--fb);font-size:.88rem;padding:.72rem .95rem;outline:none;transition:all .2s;width:100%;appearance:none;border-radius:6px}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--pink);background:var(--bg3);box-shadow:0 0 0 3px var(--pink-glow)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted)}
+.fg textarea{resize:vertical;min-height:80px}
+.fg select option{background:var(--bg2)}
+.upload-zone{border:1px dashed rgba(255,255,255,.15);padding:2rem;text-align:center;cursor:none;transition:all .2s;border-radius:8px;background:var(--bg);position:relative}
+.upload-zone:hover{border-color:var(--pink);background:rgba(233,30,140,.05)}
+.upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:none;width:100%;height:100%}
+.sz-row{display:flex;gap:.4rem;flex-wrap:wrap}
+.sz{border:1px solid var(--border);padding:.35rem .8rem;cursor:none;background:transparent;color:var(--muted);font-family:var(--fc);font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:4px;transition:all .15s}
+.sz.on{border-color:var(--pink);color:var(--pink);background:rgba(233,30,140,.1)}
+.qty-ctrl{display:flex;align-items:center;border:1px solid var(--border);border-radius:6px;overflow:hidden;width:fit-content;background:var(--bg)}
+.qb{background:transparent;border:none;color:var(--white);width:38px;height:38px;font-size:1.1rem;cursor:none;transition:background .15s;font-weight:700;display:flex;align-items:center;justify-content:center}
+.qb:hover{background:rgba(233,30,140,.15)}
+.qn{width:50px;height:38px;text-align:center;background:transparent;border:none;border-left:1px solid var(--border);border-right:1px solid var(--border);color:var(--white);font-family:var(--fb);font-size:.9rem}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.dcard{border:1px solid var(--border);padding:1rem;cursor:none;transition:all .2s;border-radius:8px;background:var(--bg)}
+.dcard input[type=radio]{display:none}
+.dcard.on{border-color:var(--cyan);background:rgba(0,212,245,.06)}
+.dcard h4{font-family:var(--fh);font-size:1.05rem;letter-spacing:1px;color:var(--white)}
+.dcard p{font-size:.72rem;color:var(--muted)}
+.dp{font-family:var(--fh);font-size:1.1rem;color:var(--cyan);margin-top:.3rem}
+.pay-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.9rem}
+.ptab{border:1px solid var(--border);padding:.5rem 1.1rem;cursor:none;background:transparent;color:var(--muted);font-family:var(--fc);font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all .2s;display:flex;align-items:center;gap:.4rem;border-radius:6px}
+.ptab.on{border-color:var(--pink);color:var(--pink);background:rgba(233,30,140,.08)}
+.pyf{display:none;flex-direction:column;gap:.8rem}.pyf.show{display:flex}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+
+/* Yappy box */
+.yb{background:linear-gradient(135deg,#3b2fc4 0%,#5b47d6 100%);border-radius:10px;padding:1.4rem;color:#fff;box-shadow:0 8px 30px rgba(59,47,196,.3)}
+.yb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.yb-row{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.1);border-radius:8px;padding:.55rem .85rem;margin:.3rem 0}
+.yb-lbl{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:700;font-family:var(--fc)}
+.yb-val{font-family:var(--fh);font-size:1.05rem;letter-spacing:2px;color:#fff}
+.yb-amt{font-family:var(--fh);font-size:2.5rem;color:var(--yellow);text-align:center;margin:.6rem 0;line-height:1}
+.cpybtn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.6rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:.25rem .6rem;border-radius:4px;cursor:none;transition:background .2s;font-family:var(--fc)}
+.cpybtn:hover,.cpybtn.ok{background:#22c55e;border-color:#22c55e}
+.qr-wrap{background:#fff;border-radius:8px;padding:.5rem;display:inline-block;margin:.5rem auto}
+.ystep{display:flex;align-items:flex-start;gap:.55rem;padding:.3rem 0;font-size:.73rem;color:rgba(255,255,255,.85);line-height:1.4}
+.ysn{background:var(--yellow);color:var(--bg);font-family:var(--fh);font-size:.72rem;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+
+/* Card form */
+.card-form{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1.3rem}
+.cbrands{display:flex;gap:.4rem;margin-bottom:1rem;align-items:center;flex-wrap:wrap}
+.cbrand{border:1px solid var(--border);padding:.2rem .55rem;border-radius:4px;font-size:.65rem;font-weight:800;letter-spacing:.5px;color:var(--muted);transition:all .2s}
+.cbrand.v.lit{color:#1a9fe0;border-color:#1a9fe0;background:rgba(26,159,224,.12)}
+.cbrand.m.lit{color:#eb001b;border-color:#eb001b;background:rgba(235,0,27,.1)}
+.cbrand.a.lit{color:#2557d6;border-color:#2557d6;background:rgba(37,87,214,.1)}
+.csubmit{width:100%;background:var(--pink);color:#fff;font-family:var(--fh);font-size:1.1rem;letter-spacing:3px;padding:.85rem;border:none;border-radius:6px;cursor:none;margin-top:.5rem;transition:all .2s;box-shadow:0 4px 20px var(--pink-glow)}
+.csubmit:hover{background:var(--pink-dk)}
+
+/* price summary */
+.price-summary{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.4rem;margin-top:1.5rem}
+.ps-row{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid var(--border)}
+.ps-row:last-child{border-bottom:none;padding-top:.8rem;margin-top:.4rem}
+.ps-lbl{font-family:var(--fc);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ps-val{font-family:var(--fc);font-size:.9rem;font-weight:700;color:var(--white)}
+.ps-total{font-family:var(--fh);font-size:2rem;color:var(--pink)}
+.step-btns{display:flex;gap:.75rem;margin-top:1.5rem}
+.sbtn{flex:1;font-family:var(--fh);font-size:1.1rem;letter-spacing:2px;padding:.9rem;border:none;border-radius:6px;cursor:none;transition:all .2s}
+.sbtn.next{background:var(--pink);color:#fff;box-shadow:0 4px 20px var(--pink-glow)}
+.sbtn.next:hover{background:var(--pink-dk)}
+.sbtn.back{background:var(--bg);border:1px solid var(--border);color:var(--off)}
+.sbtn.back:hover{border-color:var(--pink);color:var(--pink)}
+
+/* ── TESTIMONIALS ── */
+#testimonios{background:var(--bg);padding:6rem 3rem}
+.testi-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:.5rem;margin-top:2rem}
+.testi-track::-webkit-scrollbar{display:none}
+.tcard{flex:0 0 340px;scroll-snap-align:start;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.8rem;transition:border-color .2s}
+.tcard:hover{border-color:var(--pink)}
+.tcard-stars{color:var(--yellow);font-size:.85rem;letter-spacing:2px;margin-bottom:.9rem}
+.tcard q{color:var(--off);font-size:.87rem;line-height:1.75;font-weight:300;font-style:italic;display:block;margin-bottom:1.2rem}
+.tcard-author{font-family:var(--fc);font-size:.7rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;font-weight:700}
+.testi-dots{display:flex;gap:.5rem;justify-content:center;margin-top:1.5rem}
+.tdot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:none;transition:all .2s}
+.tdot.active{background:var(--pink);width:24px;border-radius:4px}
+
+/* ── CONTACT ── */
+#contacto{background:var(--bg2);padding:6rem 3rem;border-top:1px solid var(--border)}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:0 auto}
+.map-embed{border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.mrow{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.9rem}
+.mic{font-size:1rem;flex-shrink:0;margin-top:2px}
+.mrow p{color:var(--off);font-size:.85rem;line-height:1.5}
+.mrow span{color:var(--white);font-weight:600;display:block;font-family:var(--fc);font-size:.65rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.1rem}
+.sc-cards{display:flex;flex-direction:column;gap:.7rem}
+.scc{display:flex;align-items:center;gap:1rem;padding:.9rem 1.1rem;border-radius:10px;text-decoration:none;cursor:none;transition:all .2s;border:1px solid transparent}
+.scc.wa{background:linear-gradient(135deg,#128c7e,#25d366)}.scc.ig{background:linear-gradient(135deg,#833ab4,#fd1d1d,#f56040)}.scc.ph{background:linear-gradient(135deg,var(--cyan-dk),var(--cyan))}
+.scc:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.scc-ico{width:42px;height:42px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.scc-info .scc-lbl{font-family:var(--fc);font-size:.58rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:700;display:block}
+.scc-info .scc-val{font-family:var(--fh);font-size:1.1rem;letter-spacing:1px;color:#fff;display:block}
+.scc-arr{margin-left:auto;color:rgba(255,255,255,.6);font-size:1.1rem}
+.gmaps-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--pink);color:#fff;font-family:var(--fh);font-size:.9rem;letter-spacing:2px;padding:.6rem 1.2rem;border-radius:4px;text-decoration:none;cursor:none;margin-top:.8rem;transition:all .2s;box-shadow:0 4px 16px var(--pink-glow)}
+.gmaps-btn:hover{background:var(--pink-dk)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.footer-brand{font-family:var(--fh);font-size:1.8rem;letter-spacing:3px;margin-bottom:.5rem}
+.footer-brand .p{color:var(--pink)}.footer-brand .c{color:var(--cyan)}
+.footer-desc{font-size:.82rem;color:var(--muted);line-height:1.7;max-width:280px}
+.footer-title{font-family:var(--fc);font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:1rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer-links a{color:var(--off);text-decoration:none;font-size:.85rem;transition:color .2s;cursor:none}
+.footer-links a:hover{color:var(--pink)}
+.footer-socials{display:flex;gap:.6rem;margin-top:1rem}
+.fsoc{width:38px;height:38px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:none;transition:all .2s;color:var(--muted)}
+.fsoc.ig:hover{border-color:#e1306c;color:#e1306c;background:rgba(225,48,108,.08)}
+.fsoc.wa:hover{border-color:#25d366;color:#25d366;background:rgba(37,211,102,.08)}
+.fsoc.ph:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,245,.08)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between}
+.footer-bottom p{font-size:.75rem;color:var(--muted)}
+
+/* ── FLOATING BUTTONS ── */
+.fab-wa{position:fixed;bottom:7rem;right:2rem;z-index:300;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:none;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waPulse 2s ease-in-out infinite}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 40px rgba(37,211,102,.7)}}
+.fab-wa:hover{transform:scale(1.1)}
+.back-top{position:fixed;bottom:2rem;right:2rem;z-index:300;width:44px;height:44px;background:var(--pink);border:none;border-radius:50%;color:#fff;font-size:1rem;cursor:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px var(--pink-glow);opacity:0;transition:opacity .3s,transform .2s}
+.back-top.visible{opacity:1}
+.back-top:hover{transform:scale(1.1)}
+
+/* ── CHAT WIDGET ── */
+.cs-fab{position:fixed;bottom:2rem;left:2rem;z-index:400;width:54px;height:54px;background:var(--pink);border:none;border-radius:50%;cursor:none;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px var(--pink-glow);transition:transform .2s}
+.cs-fab:hover{transform:scale(1.08)}
+.cs-badge{position:absolute;top:-3px;right:-3px;background:var(--yellow);color:var(--bg);font-size:.58rem;font-weight:900;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.cs-panel{position:fixed;bottom:6.5rem;left:2rem;z-index:399;width:320px;background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden;transform:scale(.8) translateY(20px);transform-origin:bottom left;opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.34,1.56,.64,1);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.cs-panel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
+.cs-head{background:linear-gradient(135deg,var(--pink),var(--pink-dk));padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between}
+.cs-avatar{width:36px;height:36px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.cs-title{font-family:var(--fh);font-size:.95rem;letter-spacing:1px;color:#fff}
+.cs-sub{font-size:.62rem;color:rgba(255,255,255,.75);font-weight:500}
+.cs-x{background:none;border:none;color:rgba(255,255,255,.8);cursor:none;font-size:1.2rem}
+.cs-msgs{max-height:170px;overflow-y:auto;padding:.9rem;display:flex;flex-direction:column;gap:.5rem;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.cs-msg{padding:.55rem .8rem;border-radius:8px;font-size:.78rem;line-height:1.5;max-width:85%}
+.cs-msg.bot{background:var(--bg3);color:var(--off);align-self:flex-start;border-bottom-left-radius:2px}
+.cs-msg.user{background:var(--pink);color:#fff;align-self:flex-end;border-bottom-right-radius:2px}
+.cs-quick{display:flex;gap:.4rem;flex-wrap:wrap;padding:.4rem .9rem .6rem}
+.csq{border:1px solid var(--pink);color:var(--pink);background:transparent;font-size:.65rem;font-weight:700;padding:.22rem .65rem;border-radius:30px;cursor:none;font-family:var(--fc);letter-spacing:1px;transition:all .15s}
+.csq:hover{background:var(--pink);color:#fff}
+.cs-inp-row{display:flex;gap:.4rem;padding:.6rem .9rem .9rem;border-top:1px solid var(--border)}
+.cs-input{flex:1;background:var(--bg);border:1px solid var(--border);color:var(--white);font-family:var(--fb);font-size:.78rem;padding:.55rem .75rem;border-radius:6px;outline:none}
+.cs-input:focus{border-color:var(--pink)}
+.cs-send{background:var(--pink);border:none;color:#fff;width:36px;height:36px;border-radius:6px;cursor:none;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.cs-send:hover{background:var(--pink-dk)}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:7rem;left:50%;transform:translateX(-50%) translateY(20px);z-index:600;background:linear-gradient(135deg,var(--pink),var(--pink-dk));color:#fff;font-family:var(--fh);font-size:.95rem;letter-spacing:2px;padding:.9rem 2rem;opacity:0;transition:all .3s;pointer-events:none;border-radius:8px;box-shadow:0 8px 30px var(--pink-glow);white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:1024px){.sgrid{grid-template-columns:1fr 1fr}.steps-row{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.form-step.active{grid-template-columns:1fr}.viz-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){nav{padding:.8rem 1.5rem}nav ul{display:none}.hero{grid-template-columns:1fr;padding:6rem 1.5rem 3rem}.hero-right{min-height:280px}.stats{grid-template-columns:1fr 1fr}.section{padding:4rem 1.5rem}#servicios,#gallery,.hiw,#faq,#order,#testimonios,#contacto,#visualizer{padding:4rem 1.5rem}.sgrid{grid-template-columns:1fr}.faq-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}footer{padding:2rem 1.5rem}}
+</style>
+</head>
+<body>
+<!-- Cursor -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <svg width="80" height="80" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="loader-logo">
+    <circle cx="200" cy="200" r="196" fill="#e0e0e0"/>
+    <circle cx="200" cy="200" r="193" fill="white"/>
+    <g transform="skewX(-8) translate(28,0)">
+      <text x="172" y="132" text-anchor="middle" font-family="Impact,'Arial Black',sans-serif" font-size="68" font-weight="900" fill="#ff1493" letter-spacing="4">BORDADOS</text>
+    </g>
+    <g transform="skewX(-6)">
+      <text x="108" y="298" text-anchor="middle" font-family="Impact,sans-serif" font-size="148" font-weight="900" fill="#111">5</text>
+    </g>
+    <circle cx="210" cy="248" r="74" fill="#111"/>
+    <path d="M210 174 A74 74 0 0 0 136 248 L210 248Z" fill="white"/>
+    <path d="M210 174 A74 74 0 0 1 284 248 L210 248Z" fill="#00c8f0"/>
+    <path d="M284 248 A74 74 0 0 1 210 322 L210 248Z" fill="#ffe000"/>
+    <path d="M210 322 A74 74 0 0 1 136 248 L210 248Z" fill="#ff1493"/>
+    <circle cx="210" cy="248" r="56" fill="none" stroke="white" stroke-width="5"/>
+    <circle cx="210" cy="248" r="38" fill="none" stroke="white" stroke-width="4"/>
+    <circle cx="210" cy="248" r="21" fill="white"/>
+    <line x1="136" y1="248" x2="284" y2="248" stroke="white" stroke-width="3.5"/>
+    <line x1="210" y1="174" x2="210" y2="322" stroke="white" stroke-width="3.5"/>
+    <circle cx="210" cy="248" r="8" fill="#222"/>
+    <circle cx="210" cy="248" r="3" fill="white"/>
+    <circle cx="210" cy="248" r="74" fill="none" stroke="#111" stroke-width="5"/>
+    <g transform="skewX(-6)">
+      <text x="318" y="298" text-anchor="middle" font-family="Impact,sans-serif" font-size="148" font-weight="900" fill="#111">7</text>
+    </g>
+    <rect x="52" y="315" width="118" height="13" rx="4" fill="#ff1493"/>
+    <rect x="268" y="315" width="90" height="13" rx="4" fill="#00c8f0" transform="rotate(-3 268 315)"/>
+  </svg>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="196" fill="#ddd"/>
+      <circle cx="200" cy="200" r="193" fill="white"/>
+      <!-- Simplified for nav: just the bullseye target symbol -->
+      <circle cx="200" cy="200" r="130" fill="#111"/>
+      <path d="M200 70 A130 130 0 0 0 70 200 L200 200Z" fill="white"/>
+      <path d="M200 70 A130 130 0 0 1 330 200 L200 200Z" fill="#00c8f0"/>
+      <path d="M330 200 A130 130 0 0 1 200 330 L200 200Z" fill="#ffe000"/>
+      <path d="M200 330 A130 130 0 0 1 70 200 L200 200Z" fill="#ff1493"/>
+      <circle cx="200" cy="200" r="100" fill="none" stroke="white" stroke-width="9"/>
+      <circle cx="200" cy="200" r="68" fill="none" stroke="white" stroke-width="7"/>
+      <circle cx="200" cy="200" r="36" fill="white"/>
+      <line x1="70" y1="200" x2="330" y2="200" stroke="white" stroke-width="6"/>
+      <line x1="200" y1="70" x2="200" y2="330" stroke="white" stroke-width="6"/>
+      <circle cx="200" cy="200" r="14" fill="#222"/>
+      <circle cx="200" cy="200" r="5" fill="white"/>
+      <circle cx="200" cy="200" r="130" fill="none" stroke="#111" stroke-width="8"/>
+    </svg>
+    <div><div class="nav-brand">BORDADOS <span>507</span></div><div class="nav-sub">Bordados · DTF · Personalizados</div></div>
+  </a>
+  <ul>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#visualizer">DTF</a></li>
+    <li><a href="#order">Ordenar</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#order" class="nav-order">ORDENAR AHORA</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-left">
+    <div class="hero-tag">🏆 Primera empresa de bordados en Aguadulce · Casi 20 años</div>
+    <h1><span class="l1">BORDADOS</span><span class="l2">&amp; PERSO</span><span class="l3">NALIZADOS</span></h1>
+    <div class="typed-wrap"><span id="typed"></span><span class="typed-cursor"></span></div>
+    <p class="hero-desc">Tu diseño hecho realidad. Camisas, gorras, uniformes para empresas, escuelas y eventos. Enviamos a toda Panamá.</p>
+    <div class="hero-ctas">
+      <a href="#order" class="cta-p">PEDIR AHORA</a>
+      <a href="https://wa.me/50766760054?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" class="cta-wa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WHATSAPP
+      </a>
+      <a href="#servicios" class="cta-out">VER SERVICIOS</a>
+    </div>
+    <div class="hero-badges">
+      <span class="hbadge p">Bordados</span><span class="hbadge c">DTF</span><span class="hbadge y">Sublimación</span><span class="hbadge w">Uniformes</span><span class="hbadge p">Eventos</span><span class="hbadge c">Escuelas</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="logo-stage">
+      <div class="logo-orbit"><div class="logo-dot"></div></div>
+      <div class="logo-orbit2"><div class="logo-dot2"></div></div>
+      <div class="years-float">🏆 CASI<br>20 AÑOS</div>
+      <div class="rating-float">⭐ 4.6 Google<br><small style="color:#ffd600;font-family:var(--fc);font-size:.55rem">9 RESEÑAS</small></div>
+      <!-- THE REAL BORDADOS 507 LOGO — accurate SVG recreation -->
+      <svg class="logo-main-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- White circle background with slight shadow border -->
+        <circle cx="200" cy="200" r="196" fill="#e0e0e0"/>
+        <circle cx="200" cy="200" r="193" fill="white"/>
+
+        <!-- "BORDADOS" — bold italic pink, grunge style -->
+        <g transform="skewX(-8) translate(28,0)">
+          <text x="172" y="132"
+            text-anchor="middle"
+            font-family="Impact,'Arial Black',sans-serif"
+            font-size="68" font-weight="900"
+            fill="#ff1493"
+            letter-spacing="4">BORDADOS</text>
+        </g>
+
+        <!-- "5" — large bold black, slightly italic -->
+        <g transform="skewX(-6)">
+          <text x="108" y="298"
+            text-anchor="middle"
+            font-family="Impact,sans-serif"
+            font-size="148" font-weight="900"
+            fill="#111">5</text>
+        </g>
+
+        <!-- BULLSEYE TARGET "O" (replaces the 0 in 507) -->
+        <!-- Outer black filled circle -->
+        <circle cx="210" cy="248" r="74" fill="#111"/>
+        <!-- 4 colored quadrants -->
+        <!-- Top-left: WHITE -->
+        <path d="M210 174 A74 74 0 0 0 136 248 L210 248Z" fill="white"/>
+        <!-- Top-right: CYAN -->
+        <path d="M210 174 A74 74 0 0 1 284 248 L210 248Z" fill="#00c8f0"/>
+        <!-- Bottom-right: YELLOW -->
+        <path d="M284 248 A74 74 0 0 1 210 322 L210 248Z" fill="#ffe000"/>
+        <!-- Bottom-left: PINK/MAGENTA -->
+        <path d="M210 322 A74 74 0 0 1 136 248 L210 248Z" fill="#ff1493"/>
+        <!-- Ring 1 (outer white ring) -->
+        <circle cx="210" cy="248" r="56" fill="none" stroke="white" stroke-width="5"/>
+        <!-- Ring 2 (inner white ring) -->
+        <circle cx="210" cy="248" r="38" fill="none" stroke="white" stroke-width="4"/>
+        <!-- Ring 3 (innermost white ring / center zone) -->
+        <circle cx="210" cy="248" r="21" fill="white"/>
+        <!-- Crosshair lines (white) -->
+        <line x1="136" y1="248" x2="284" y2="248" stroke="white" stroke-width="3.5"/>
+        <line x1="210" y1="174" x2="210" y2="322" stroke="white" stroke-width="3.5"/>
+        <!-- Center bullseye dot -->
+        <circle cx="210" cy="248" r="8" fill="#222"/>
+        <circle cx="210" cy="248" r="3" fill="white"/>
+        <!-- Outer ring border (black) -->
+        <circle cx="210" cy="248" r="74" fill="none" stroke="#111" stroke-width="5"/>
+
+        <!-- "7" — large bold black, slightly italic -->
+        <g transform="skewX(-6)">
+          <text x="318" y="298"
+            text-anchor="middle"
+            font-family="Impact,sans-serif"
+            font-size="148" font-weight="900"
+            fill="#111">7</text>
+        </g>
+
+        <!-- PINK accent bar under the "5" -->
+        <rect x="52" y="315" width="118" height="13" rx="4" fill="#ff1493"/>
+
+        <!-- CYAN accent slash under the "7" — diagonal, like in the real logo -->
+        <rect x="268" y="315" width="90" height="13" rx="4" fill="#00c8f0" transform="rotate(-3 268 315)"/>
+      </svg>
+      <a href="https://www.instagram.com/bordados507__" target="_blank" style="position:absolute;bottom:15px;left:-25px;background:linear-gradient(135deg,#833ab4,#fd1d1d);color:#fff;font-family:var(--fc);font-size:.7rem;font-weight:700;padding:.38rem .85rem;border-radius:30px;text-decoration:none;display:flex;align-items:center;gap:.4rem">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        @bordados507__
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item"><span class="stat-val" data-count="1900">0</span><div class="stat-lbl">Seguidores Instagram</div></div>
+  <div class="stat-item"><span class="stat-val" data-count="20">0</span><div class="stat-lbl">Años de experiencia</div></div>
+  <div class="stat-item"><span class="stat-val" data-count="46" data-dec="1">0</span><div class="stat-lbl">Estrellas Google</div></div>
+  <div class="stat-item"><span class="stat-val" data-count="3">0</span><div class="stat-lbl">Servicios disponibles</div></div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="servicios">
+  <p class="sl p reveal">Nuestros servicios</p>
+  <h2 class="sec-title reveal">LO QUE<br>HACEMOS</h2>
+  <div class="sgrid">
+    <div class="scard p reveal" style="transition-delay:.1s"><div class="scard-icon">🧵</div><h3>Bordados</h3><p>Bordado profesional en camisas, gorras, chaquetas y uniformes. Alta durabilidad, acabado perfecto.</p><span class="scard-tag">DESDE $15 C/U</span><div class="scard-num">01</div></div>
+    <div class="scard c reveal" style="transition-delay:.2s"><div class="scard-icon">🖨️</div><h3>DTF</h3><p>Direct to Film — impresión full color de alta resolución. Cualquier diseño, cualquier tela, sin límites.</p><span class="scard-tag">DESDE $12 C/U</span><div class="scard-num">02</div></div>
+    <div class="scard y reveal" style="transition-delay:.3s"><div class="scard-icon">✨</div><h3>Sublimación</h3><p>Colores ultra vibrantes que no se desgastan. Ideal para deportes, merch y eventos especiales.</p><span class="scard-tag">DESDE $14 C/U</span><div class="scard-num">03</div></div>
+    <div class="scard k reveal" style="transition-delay:.4s"><div class="scard-icon">🎓</div><h3>Escuelas &amp; Empresas</h3><p>Uniformes, graduaciones, eventos. Desde 1 unidad hasta producción masiva con descuentos.</p><span class="scard-tag">PEDIDOS MASIVOS</span><div class="scard-num">04</div></div>
+  </div>
+</section>
+
+<!-- SHIRT VISUALIZER -->
+<section id="visualizer">
+  <div class="viz-grid">
+    <div class="viz-shirt-wrap reveal-l">
+      <svg width="260" height="290" viewBox="0 0 260 290" xmlns="http://www.w3.org/2000/svg">
+        <path id="shirt-shape" d="M60 32 L15 100 L65 112 L65 270 L195 270 L195 112 L245 100 L200 32 C182 54 165 63 130 63 C95 63 78 54 60 32Z" fill="#ffffff" stroke="#ddd" stroke-width="1.5" class="viz-shirt"/>
+        <path d="M97 32 C107 58 153 58 163 32" fill="none" stroke="#ccc" stroke-width="1.5"/>
+        <circle cx="130" cy="166" r="38" fill="none" stroke="#e91e8c" stroke-width="1.5" opacity=".4"/>
+        <path d="M130 128 A38 38 0 0 1 168 166 L130 166Z" fill="#e91e8c" opacity=".7"/>
+        <path d="M168 166 A38 38 0 0 1 130 204 L130 166Z" fill="#00d4f5" opacity=".7"/>
+        <path d="M130 204 A38 38 0 0 1 92 166 L130 166Z" fill="#ffd600" opacity=".8"/>
+        <path d="M92 166 A38 38 0 0 1 130 128 L130 166Z" fill="#111" opacity=".7"/>
+        <circle cx="130" cy="166" r="12" fill="white" opacity=".9"/>
+        <circle cx="130" cy="166" r="5" fill="#333"/>
+        <line x1="92" y1="166" x2="168" y2="166" stroke="white" stroke-width="1.5" opacity=".6"/>
+        <line x1="130" y1="128" x2="130" y2="204" stroke="white" stroke-width="1.5" opacity=".6"/>
+        <text x="130" y="240" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="14" fill="#e91e8c" letter-spacing="3" opacity=".6">BORDADOS 507</text>
+      </svg>
+      <div class="swatch-label">ELIGE EL COLOR DE TU PRENDA</div>
+      <div class="color-swatches">
+        <div class="swatch active" style="background:#ffffff;border-color:#ccc" onclick="setShirtColor('#ffffff','Blanco')" title="Blanco"></div>
+        <div class="swatch" style="background:#1a1a1a" onclick="setShirtColor('#1a1a1a','Negro')" title="Negro"></div>
+        <div class="swatch" style="background:#6b6b6b" onclick="setShirtColor('#6b6b6b','Gris')" title="Gris"></div>
+        <div class="swatch" style="background:#1a2e5a" onclick="setShirtColor('#1a2e5a','Azul Marino')" title="Azul Marino"></div>
+        <div class="swatch" style="background:#c0392b" onclick="setShirtColor('#c0392b','Rojo')" title="Rojo"></div>
+        <div class="swatch" style="background:#1a7a4a" onclick="setShirtColor('#1a7a4a','Verde')" title="Verde"></div>
+        <div class="swatch" style="background:#f5d5a0" onclick="setShirtColor('#f5d5a0','Beige')" title="Beige"></div>
+        <div class="swatch" style="background:#e91e8c" onclick="setShirtColor('#e91e8c','Rosa')" title="Rosa"></div>
+        <div class="swatch" style="background:#8e44ad" onclick="setShirtColor('#8e44ad','Morado')" title="Morado"></div>
+        <div class="swatch" style="background:#00c8e0" onclick="setShirtColor('#00c8e0','Cyan')" title="Cyan"></div>
+      </div>
+      <p id="color-name" style="font-family:var(--fc);font-size:.7rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:.3rem">Blanco seleccionado</p>
+    </div>
+    <div class="viz-info reveal-r">
+      <p class="sl c">Tecnología DTF</p>
+      <h2 style="font-family:var(--fh);font-size:clamp(2.5rem,4vw,4.5rem);line-height:.9;color:var(--white);margin-bottom:1rem">DIRECT<br><span style="color:var(--pink)">TO</span><br>FILM</h2>
+      <p style="color:var(--off);font-size:.9rem;line-height:1.75;font-weight:300">La tecnología más avanzada en impresión textil. Full color en cualquier tela, sin importar la complejidad del diseño. Usa el selector para visualizar tu prenda.</p>
+      <div class="dtf-features" style="margin-top:1rem">
+        <div class="dtff">Full color — cualquier diseño sin límites</div>
+        <div class="dtff">Alta definición y colores ultra vibrantes</div>
+        <div class="dtff">Funciona en telas oscuras y claras</div>
+        <div class="dtff">Lavable y durable — no se agrieta</div>
+        <div class="dtff">Pedidos desde 1 unidad</div>
+      </div>
+      <a href="#order" class="cta-p" style="margin-top:2rem;display:inline-flex;font-size:1rem">PEDIR DTF AHORA</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<div class="hiw" id="proceso">
+  <p class="sl p reveal">Proceso</p>
+  <h2 class="sec-title reveal">CÓMO<br>FUNCIONA</h2>
+  <div class="steps-row">
+    <div class="step-card reveal" style="transition-delay:.1s"><div class="step-dot"><span>01</span></div><span class="step-icon">📤</span><h3>Envía tu Diseño</h3><p>Sube tu arte en PNG, JPG, SVG o PDF. ¿Sin diseño? Te ayudamos a crearlo.</p></div>
+    <div class="step-card reveal" style="transition-delay:.2s"><div class="step-dot"><span>02</span></div><span class="step-icon">💬</span><h3>Confirmamos</h3><p>Revisamos colores, talla y cantidad. Confirmación antes de producir.</p></div>
+    <div class="step-card reveal" style="transition-delay:.3s"><div class="step-dot"><span>03</span></div><span class="step-icon">⚙️</span><h3>Producimos</h3><p>Bordamos, DTF o sublimamos con materiales premium.</p></div>
+    <div class="step-card reveal" style="transition-delay:.4s"><div class="step-dot"><span>04</span></div><span class="step-icon">🚚</span><h3>Enviamos</h3><p>Express 1-3 días o Estándar 5-7 días. Toda Panamá.</p></div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <p class="sl c reveal">Portafolio</p>
+  <h2 class="sec-title reveal">NUESTRO<br>TRABAJO</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal-s" style="transition-delay:.05s"><svg width="120" height="120" viewBox="0 0 120 120"><rect width="120" height="120" fill="#1c1c30"/><circle cx="60" cy="50" r="30" fill="none" stroke="#e91e8c" stroke-width="2"/><text x="60" y="80" text-anchor="middle" font-family="'Bebas Neue'" font-size="12" fill="#e91e8c" letter-spacing="2">BORDADO</text><circle cx="60" cy="50" r="18" fill="none" stroke="#e91e8c" stroke-width="1" opacity=".5"/><text x="60" y="54" text-anchor="middle" font-family="'Bebas Neue'" font-size="18" fill="white">EB</text></svg><div class="gal-overlay"><span>BORDADO CORPORATIVO</span><small>Uniformes empresariales</small></div></div>
+    <div class="gallery-item reveal-s" style="transition-delay:.1s"><svg width="120" height="120" viewBox="0 0 120 120"><rect width="120" height="120" fill="#1a1a2e"/><rect x="20" y="20" width="80" height="80" rx="4" fill="none" stroke="#00d4f5" stroke-width="2"/><text x="60" y="55" text-anchor="middle" font-family="'Bebas Neue'" font-size="22" fill="#00d4f5">DTF</text><text x="60" y="75" text-anchor="middle" font-family="'Bebas Neue'" font-size="10" fill="#00d4f5" letter-spacing="3" opacity=".7">FULL COLOR</text></svg><div class="gal-overlay"><span>IMPRESIÓN DTF</span><small>Full color alta definición</small></div></div>
+    <div class="gallery-item reveal-s" style="transition-delay:.15s"><svg width="120" height="120" viewBox="0 0 120 120"><rect width="120" height="120" fill="#1c1a0d"/><path d="M60 20 L100 90 L20 90 Z" fill="none" stroke="#ffd600" stroke-width="2"/><text x="60" y="78" text-anchor="middle" font-family="'Bebas Neue'" font-size="11" fill="#ffd600" letter-spacing="2">EQUIPO</text><circle cx="60" cy="50" r="8" fill="#ffd600" opacity=".6"/></svg><div class="gal-overlay"><span>UNIFORMES DEPORTIVOS</span><small>Sublimación full color</small></div></div>
+    <div class="gallery-item reveal-s" style="transition-delay:.2s"><svg width="120" height="120" viewBox="0 0 120 120"><rect width="120" height="120" fill="#1c0d1a"/><rect x="25" y="35" width="70" height="50" rx="3" fill="none" stroke="#e91e8c" stroke-width="2"/><text x="60" y="55" text-anchor="middle" font-family="'Bebas Neue'" font-size="14" fill="#e91e8c">GORRA</text><text x="60" y="72" text-anchor="middle" font-family="'Bebas Neue'" font-size="9" fill="#e91e8c" opacity=".7" letter-spacing="2">BORDADA</text></svg><div class="gal-overlay"><span>GORRAS BORDADAS</span><small>Personalización premium</small></div></div>
+    <div class="gallery-item reveal-s" style="transition-delay:.25s"><svg width="120" height="120" viewBox="0 0 120 120"><rect width="120" height="120" fill="#0d1a1a"/><text x="60" y="45" text-anchor="middle" font-family="'Bebas Neue'" font-size="28" fill="#00d4f5">507</text><line x1="20" y1="55" x2="100" y2="55" stroke="#00d4f5" stroke-width="1" opacity=".5"/><text x="60" y="72" text-anchor="middle" font-family="'Bebas Neue'" font-size="10" fill="#00d4f5" letter-spacing="3">ESCOLAR</text></svg><div class="gal-overlay"><span>UNIFORMES ESCOLARES</span><small>Colegios y academias</small></div></div>
+    <div class="gallery-item reveal-s" style="transition-delay:.3s"><svg width="120" height="120" viewBox="0 0 120 120"><rect width="120" height="120" fill="#1a0d0d"/><circle cx="60" cy="55" r="32" fill="none" stroke="#e91e8c" stroke-width="1.5"/><circle cx="60" cy="55" r="20" fill="none" stroke="#ffd600" stroke-width="1.5" opacity=".7"/><circle cx="60" cy="55" r="8" fill="#e91e8c" opacity=".8"/><line x1="28" y1="55" x2="92" y2="55" stroke="white" stroke-width="1" opacity=".4"/><line x1="60" y1="23" x2="60" y2="87" stroke="white" stroke-width="1" opacity=".4"/></svg><div class="gal-overlay"><span>DISEÑO PERSONALIZADO</span><small>Tu arte, nuestro trabajo</small></div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <p class="sl y reveal">Preguntas frecuentes</p>
+  <h2 class="sec-title reveal">FAQ</h2>
+  <div class="faq-grid">
+    <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Cuánto cuesta un bordado?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>Los precios varían según la complejidad del diseño y la cantidad. Desde $15 por unidad para bordados simples. Para volúmenes mayores tenemos precios especiales. Contáctanos para un presupuesto personalizado.</p></div></div>
+    <div class="faq-item reveal" style="transition-delay:.05s"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Qué es el DTF y en qué telas funciona?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>DTF (Direct to Film) es una técnica de impresión full color que adhiere la tinta directamente a la tela. Funciona en algodón, poliéster, mezclas, telas oscuras y claras — prácticamente en cualquier prenda.</p></div></div>
+    <div class="faq-item reveal" style="transition-delay:.1s"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Cuánto tarda la entrega?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>Envío Express: 1-3 días hábiles ($12). Envío Estándar: 5-7 días hábiles ($5). Enviamos a toda Panamá con seguimiento de paquete.</p></div></div>
+    <div class="faq-item reveal" style="transition-delay:.15s"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Puedo pedir desde 1 unidad?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>¡Sí! Aceptamos pedidos desde 1 unidad. Para pedidos de 10 unidades o más tenemos descuentos especiales. Para producción masiva (50+) ofrecemos precios corporativos.</p></div></div>
+    <div class="faq-item reveal" style="transition-delay:.2s"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Qué formatos de diseño aceptan?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>Aceptamos PNG, JPG, SVG, PDF, AI y EPS. Para mejor calidad recomendamos archivos vectoriales (SVG, AI) o PNG en alta resolución (300 DPI mínimo). Si no tienes diseño, ¡te ayudamos a crearlo!</p></div></div>
+    <div class="faq-item reveal" style="transition-delay:.25s"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Cómo pago mi pedido?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>Aceptamos Yappy (enviar al 6676-0054) y tarjetas de crédito/débito Visa, Mastercard y American Express. Todos los pagos son seguros y confirmamos por WhatsApp.</p></div></div>
+  </div>
+</section>
+
+<!-- ORDER (multi-step) -->
+<section id="order">
+  <div class="order-inner">
+    <p class="sl p reveal">Pedido en línea</p>
+    <h2 class="sec-title reveal">ORDENA<br>AHORA</h2>
+    <div class="steps-nav">
+      <div class="snav active" data-step="1" data-n="PASO 1" onclick="goStep(1)">TU INFORMACIÓN</div>
+      <div class="snav" data-step="2" data-n="PASO 2" onclick="goStep(2)">TU PEDIDO</div>
+      <div class="snav" data-step="3" data-n="PASO 3" onclick="goStep(3)">PAGO</div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="form-step active" id="step1">
+      <div class="fc">
+        <div class="fg"><label>Nombre Completo *</label><input type="text" id="fn" placeholder="Ej. Ana García"/></div>
+        <div class="fg"><label>Correo Electrónico *</label><input type="email" id="em" placeholder="correo@email.com"/></div>
+        <div class="fg"><label>Teléfono / WhatsApp</label><input type="tel" id="ph" placeholder="+507 6000-0000"/></div>
+        <div class="fg"><label>Dirección de Entrega</label><textarea id="addr" placeholder="Calle, barrio, ciudad, provincia…"></textarea></div>
+      </div>
+      <div class="fc">
+        <div class="fg"><label>Sube tu Diseño</label>
+          <div class="upload-zone"><input type="file" accept=".png,.jpg,.svg,.pdf,.ai" onchange="handleFile(this)"/>
+            <p style="font-size:1.8rem;margin-bottom:.4rem">⬆️</p>
+            <p id="ut" style="font-size:.82rem;color:var(--muted)"><strong style="color:var(--white)">Clic para subir</strong> o arrastra<br>PNG, JPG, SVG, PDF — máx 20 MB</p>
+          </div>
+        </div>
+        <div class="fg"><label>Notas especiales</label><textarea id="notes" placeholder="Colores, posición del diseño, instrucciones…"></textarea></div>
+        <div class="step-btns"><button class="sbtn next" onclick="goStep(2)">SIGUIENTE: PEDIDO →</button></div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="form-step" id="step2">
+      <div class="fc">
+        <div class="fg"><label>Tipo de Prenda</label>
+          <select id="tipo"><option value="">Selecciona…</option><option>Camisa T-Shirt</option><option>Camisa Polo</option><option>Manga Larga</option><option>Gorra</option><option>Chaqueta / Hoodie</option><option>Uniforme Escolar</option><option>Otro</option></select>
+        </div>
+        <div class="fg"><label>Servicio</label>
+          <select id="svc" onchange="calcTotal()"><option value="15">Bordado — $15 c/u</option><option value="12">DTF — $12 c/u</option><option value="14">Sublimación — $14 c/u</option></select>
+        </div>
+        <div class="fg"><label>Color de Prenda</label>
+          <select id="col"><option value="">Selecciona…</option><option>Blanco</option><option>Negro</option><option>Gris</option><option>Azul Marino</option><option>Rojo</option><option>Verde</option><option>Beige</option><option>Rosa</option><option>Personalizado</option></select>
+        </div>
+        <div class="fg"><label>Talla</label>
+          <div class="sz-row"><button class="sz" onclick="pickSz(this)">XS</button><button class="sz" onclick="pickSz(this)">S</button><button class="sz on" onclick="pickSz(this)">M</button><button class="sz" onclick="pickSz(this)">L</button><button class="sz" onclick="pickSz(this)">XL</button><button class="sz" onclick="pickSz(this)">XXL</button><button class="sz" onclick="pickSz(this)">XXXL</button></div>
+        </div>
+      </div>
+      <div class="fc">
+        <div class="fg"><label>Cantidad</label>
+          <div class="qty-ctrl"><button class="qb" onclick="chgQty(-1)">−</button><input class="qn" type="number" id="qty" value="1" min="1" onchange="calcTotal()"/><button class="qb" onclick="chgQty(1)">+</button></div>
+        </div>
+        <div class="fg"><label>Método de Envío</label>
+          <div class="dgrid">
+            <label class="dcard on" id="dc-ex" onclick="pickDel('ex')"><input type="radio" name="del" checked/><h4>⚡ Express</h4><p>1–3 días hábiles</p><div class="dp">$12.00</div></label>
+            <label class="dcard" id="dc-st" onclick="pickDel('st')"><input type="radio" name="del"/><h4>📦 Estándar</h4><p>5–7 días hábiles</p><div class="dp">$5.00</div></label>
+          </div>
+        </div>
+        <div class="price-summary">
+          <div class="ps-row"><span class="ps-lbl">Prenda x cantidad</span><span class="ps-val" id="ps-sub">$15.00</span></div>
+          <div class="ps-row"><span class="ps-lbl">Envío</span><span class="ps-val" id="ps-del">$12.00</span></div>
+          <div class="ps-row"><span class="ps-lbl">TOTAL</span><span class="ps-total" id="ps-tot">$27.00</span></div>
+        </div>
+        <div class="step-btns">
+          <button class="sbtn back" onclick="goStep(1)">← ATRÁS</button>
+          <button class="sbtn next" onclick="goStep(3)">SIGUIENTE: PAGO →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="form-step single" id="step3" style="max-width:600px;margin:0 auto">
+      <div class="pay-tabs">
+        <button class="ptab on" onclick="pickPay('yappy',this)">
+          <svg width="22" height="16" viewBox="0 0 52 44" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="18" cy="17" rx="16" ry="15" fill="#1a9fe0"/>
+            <path d="M9 29 Q5 38 13 34 Q16 31 18 34Z" fill="#1a9fe0"/>
+            <ellipse cx="36" cy="12" rx="14" ry="12" fill="#f5a623"/>
+            <path d="M40 23 Q45 30 39 27 Q37 24 36 27Z" fill="#f5a623"/>
+          </svg>
+          Yappy
+        </button>
+        <button class="ptab" onclick="pickPay('card',this)">💳 Tarjeta</button>
+      </div>
+
+      <!-- YAPPY -->
+      <div class="pyf show" id="pf-yappy">
+          <div class="yb">
+          <div class="yb-head">
+            <!-- Yappy logo: only the two speech bubbles (blue + orange), no text -->
+            <svg width="52" height="44" viewBox="0 0 52 44" xmlns="http://www.w3.org/2000/svg">
+              <!-- Blue speech bubble (left, larger) -->
+              <ellipse cx="18" cy="17" rx="16" ry="15" fill="#1a9fe0"/>
+              <path d="M9 29 Q5 38 13 34 Q16 31 18 34Z" fill="#1a9fe0"/>
+              <!-- Orange speech bubble (right, overlapping on top) -->
+              <ellipse cx="36" cy="12" rx="14" ry="12" fill="#f5a623"/>
+              <path d="M40 23 Q45 30 39 27 Q37 24 36 27Z" fill="#f5a623"/>
+            </svg>
+            <span style="color:rgba(255,255,255,.6);font-size:.62rem;letter-spacing:1px;font-family:var(--fc);font-weight:700">PAGO SEGURO CON YAPPY</span>
+          </div>
+          <div class="yb-row"><span class="yb-lbl">Número Yappy</span><span style="display:flex;align-items:center;gap:.5rem"><span class="yb-val">6676-0054</span><button class="cpybtn" id="cpybtn" onclick="copyPhone()">COPIAR</button></span></div>
+          <div class="yb-row"><span class="yb-lbl">Monto a pagar</span><span class="yb-val" id="yb-amt">$27.00</span></div>
+          <div class="yb-row"><span class="yb-lbl">Concepto</span><span class="yb-val" style="font-size:.8rem">Pedido Bordados 507</span></div>
+          <div style="text-align:center"><div class="qr-wrap"><canvas id="yqr" width="100" height="100"></canvas></div><p style="font-size:.62rem;color:rgba(255,255,255,.5);margin-top:-.2rem;font-family:var(--fc)">Escanea con tu cámara</p></div>
+          <div style="margin-top:.6rem">
+            <div class="ystep"><span class="ysn">1</span><span>Abre la app <strong>Yappy</strong> en tu celular</span></div>
+            <div class="ystep"><span class="ysn">2</span><span>Toca <strong>"Enviar"</strong> → ingresa <strong style="color:var(--yellow)">6676-0054</strong></span></div>
+            <div class="ystep"><span class="ysn">3</span><span>Monto: <strong id="ystep-amt" style="color:var(--yellow)">$27.00</strong> · Concepto: "Pedido 507"</span></div>
+            <div class="ystep"><span class="ysn">4</span><span>Envíanos el <strong>comprobante por WhatsApp</strong></span></div>
+          </div>
+        </div>
+        <button class="sbtn next" onclick="submitOrder()" style="margin-top:.75rem">CONFIRMAR PEDIDO →</button>
+      </div>
+
+      <!-- CARD -->
+      <div class="pyf" id="pf-card">
+        <div class="card-form">
+          <div class="cbrands">
+            <span style="font-size:.62rem;color:var(--muted);font-family:var(--fc);font-weight:700;margin-right:.2rem">ACEPTA:</span>
+            <span class="cbrand v" id="cb-v">VISA</span><span class="cbrand m" id="cb-m">MASTERCARD</span><span class="cbrand a" id="cb-a">AMEX</span>
+          </div>
+          <div class="r2" style="margin-bottom:.6rem">
+            <div class="fg"><label>Número de Tarjeta</label><input type="text" id="cnum" placeholder="1234 5678 9012 3456" maxlength="19" oninput="fmtCard(this)" style="background:var(--bg);border:1px solid var(--border);color:var(--white);font-family:var(--fb);font-size:.88rem;padding:.65rem .85rem;outline:none;border-radius:6px;width:100%"/></div>
+          </div>
+          <div class="r2" style="margin-bottom:.6rem">
+            <div class="fg"><label>Vencimiento</label><input type="text" id="cexp" placeholder="MM / AA" maxlength="7" oninput="fmtExp(this)" style="background:var(--bg);border:1px solid var(--border);color:var(--white);font-family:var(--fb);font-size:.88rem;padding:.65rem .85rem;outline:none;border-radius:6px;width:100%"/></div>
+            <div class="fg"><label>CVV</label><input type="text" id="ccvv" placeholder="123" maxlength="4" oninput="this.value=this.value.replace(/\D/g,'')" style="background:var(--bg);border:1px solid var(--border);color:var(--white);font-family:var(--fb);font-size:.88rem;padding:.65rem .85rem;outline:none;border-radius:6px;width:100%"/></div>
+          </div>
+          <div class="fg" style="margin-bottom:.75rem"><label>Nombre en la Tarjeta</label><input type="text" id="cname" placeholder="Como aparece en la tarjeta" style="background:var(--bg);border:1px solid var(--border);color:var(--white);font-family:var(--fb);font-size:.88rem;padding:.65rem .85rem;outline:none;border-radius:6px;width:100%"/></div>
+          <button class="csubmit" onclick="submitCardOrder()">CONFIRMAR PEDIDO — <span id="card-total">$27.00</span></button>
+          <p style="font-size:.65rem;color:var(--muted);text-align:center;margin-top:.5rem">🔒 Cifrado SSL · Pago seguro · Al confirmar te contactamos por WhatsApp</p>
+        </div>
+        <button class="sbtn back" onclick="goStep(2)" style="margin-top:.75rem">← VOLVER AL PEDIDO</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonios">
+  <p class="sl p reveal">Reseñas reales</p>
+  <h2 class="sec-title reveal">LO QUE DICEN<br>NUESTROS CLIENTES</h2>
+  <div class="testi-track" id="ttrack">
+    <div class="tcard"><div class="tcard-stars">★★★★★</div><q>Ordené 30 camisas bordadas para nuestra empresa y quedaron perfectas. El tiempo de entrega fue increíble. Los mejores en Aguadulce, sin duda.</q><div class="tcard-author">— Carlos M. · Panamá City</div></div>
+    <div class="tcard"><div class="tcard-stars">★★★★★</div><q>Usé DTF para los uniformes de mi equipo de fútbol. Los colores quedaron increíblemente vibrantes. Llevan casi 20 años y se nota la experiencia.</q><div class="tcard-author">— Luciana P. · Aguadulce</div></div>
+    <div class="tcard"><div class="tcard-stars">★★★★★</div><q>El pago por Yappy fue super fácil y rápido. Mis camisas llegaron en 2 días con Express. Diseño perfecto y atención al cliente de primera.</q><div class="tcard-author">— Marcos V. · Chiriquí</div></div>
+    <div class="tcard"><div class="tcard-stars">★★★★★</div><q>Hice los uniformes escolares de nuestro colegio. Proceso súper fácil, solo enviamos el logo y ellos se encargaron de todo. Excelente calidad.</q><div class="tcard-author">— Prof. María L. · Coclé</div></div>
+    <div class="tcard"><div class="tcard-stars">★★★★★</div><q>Primera vez usando bordados para mi negocio y quedé encantado. El resultado superó mis expectativas. Ya tengo listo mi segundo pedido.</q><div class="tcard-author">— Roberto H. · Penonomé</div></div>
+  </div>
+  <div class="testi-dots" id="tdots">
+    <div class="tdot active" onclick="scrollT(0)"></div><div class="tdot" onclick="scrollT(1)"></div><div class="tdot" onclick="scrollT(2)"></div><div class="tdot" onclick="scrollT(3)"></div><div class="tdot" onclick="scrollT(4)"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="contact-inner">
+    <p class="sl c reveal">Visítanos</p>
+    <h2 class="sec-title reveal">ENCUÉNTRANOS</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="map-embed reveal-l">
+          <iframe src="https://maps.google.com/maps?q=Bordados+507+C.+Victoriano+Lorenzo+Aguadulce+Cocle+Panama&output=embed&z=17&hl=es" width="100%" height="280" style="border:0;display:block" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div style="margin-top:1.2rem">
+          <div class="mrow"><span class="mic">📍</span><p><span>Dirección</span>C. Victoriano Lorenzo, Aguadulce, Provincia de Coclé, Panamá</p></div>
+          <div class="mrow"><span class="mic">🕐</span><p><span>Horario</span>Lunes – Sábado · 8:00 am – 6:00 pm</p></div>
+          <div class="mrow"><span class="mic">⭐</span><p><span>Google</span>4.6 estrellas · 9 reseñas verificadas</p></div>
+          <a href="https://www.google.com/maps/search/Bordados+507+Aguadulce" target="_blank" class="gmaps-btn">📍 VER EN GOOGLE MAPS →</a>
+        </div>
+      </div>
+      <div class="reveal-r">
+        <p style="font-family:var(--fc);font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:1.2rem">Contáctanos directamente</p>
+        <div class="sc-cards">
+          <a href="https://wa.me/50766760054?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" class="scc wa"><div class="scc-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><div class="scc-info"><span class="scc-lbl">WhatsApp</span><span class="scc-val">+507 6676-0054</span></div><span class="scc-arr">→</span></a>
+          <a href="https://www.instagram.com/bordados507__" target="_blank" class="scc ig"><div class="scc-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div><div class="scc-info"><span class="scc-lbl">Instagram</span><span class="scc-val">@bordados507__</span></div><span class="scc-arr">→</span></a>
+          <a href="tel:+50766760054" class="scc ph"><div class="scc-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div class="scc-info"><span class="scc-lbl">Llamar ahora</span><span class="scc-val">+507 6676-0054</span></div><span class="scc-arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="p">BORDADOS</span> <span class="c">507</span></div>
+      <p class="footer-desc">Primera empresa de bordados en Aguadulce con casi 20 años de experiencia. Bordados, DTF y sublimación para empresas, escuelas y eventos en toda Panamá.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/bordados507__" target="_blank" class="fsoc ig"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://wa.me/50766760054" target="_blank" class="fsoc wa"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="tel:+50766760054" class="fsoc ph"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>
+      </div>
+    </div>
+    <div><p class="footer-title">Navegación</p><ul class="footer-links"><li><a href="#inicio">Inicio</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#visualizer">DTF</a></li><li><a href="#gallery">Portafolio</a></li><li><a href="#faq">FAQ</a></li><li><a href="#order">Ordenar</a></li></ul></div>
+    <div><p class="footer-title">Contacto</p><ul class="footer-links"><li><a href="tel:+50766760054">+507 6676-0054</a></li><li><a href="https://wa.me/50766760054" target="_blank">WhatsApp</a></li><li><a href="https://instagram.com/bordados507__" target="_blank">@bordados507__</a></li><li><a href="#">rodrigosang26@gmail.com</a></li></ul><p class="footer-title" style="margin-top:1rem">Horario</p><p style="font-size:.8rem;color:var(--muted)">Lun – Sáb: 8am – 6pm</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Bordados 507 · Todos los derechos reservados</p><p>Bordados · DTF · Sublimación · Aguadulce, Coclé, Panamá</p></div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/50766760054?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" class="fab-wa">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- CUSTOMER SERVICE CHAT -->
+<button class="cs-fab" onclick="toggleCS()"><div class="cs-badge">?</div><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></button>
+<div class="cs-panel" id="csp">
+  <div class="cs-head"><div style="display:flex;align-items:center;gap:.7rem"><div class="cs-avatar">🧵</div><div><div class="cs-title">Servicio al Cliente</div><div class="cs-sub" style="display:flex;align-items:center;gap:.3rem"><span style="width:7px;height:7px;background:#4ade80;border-radius:50%;display:inline-block"></span>En línea ahora</div></div></div><button class="cs-x" onclick="toggleCS()">✕</button></div>
+  <div class="cs-msgs" id="csmsgs"><div class="cs-msg bot">¡Hola! 👋 Soy el asistente de <strong>Bordados 507</strong>. ¿En qué puedo ayudarte?</div></div>
+  <div class="cs-quick"><button class="csq" onclick="csQuick('¿Cuánto cuesta un bordado?')">💰 Precios</button><button class="csq" onclick="csQuick('¿Cuánto tarda el envío?')">🚚 Envíos</button><button class="csq" onclick="csQuick('¿Hacen DTF?')">🖨️ DTF</button><button class="csq" onclick="csQuick('Quiero hacer un pedido')">📦 Pedido</button></div>
+  <div class="cs-inp-row"><input class="cs-input" id="csinp" placeholder="Escribe tu pregunta…" onkeydown="if(event.key==='Enter')csend()"/><button class="cs-send" onclick="csend()"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button></div>
+</div>
+<div class="toast" id="toast">¡PEDIDO CONFIRMADO! 🎉</div>
+
+<script>
+// ── EMAIL CONFIG ──────────────────────────────
+// Setup free at emailjs.com → connect Gmail → get keys
+const EJS_PK  = 'TU_PUBLIC_KEY';
+const EJS_SID = 'TU_SERVICE_ID';
+const EJS_TID = 'TU_TEMPLATE_ID';
+try{ emailjs.init(EJS_PK) }catch(e){}
+const BIZ_PHONE = '50766760054';
+
+// ── LOADER ───────────────────────────────────
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('loader').classList.add('gone'),2000);
+});
+
+// ── CUSTOM CURSOR ────────────────────────────
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  curR.style.left=e.clientX+'px';curR.style.top=e.clientY+'px';
+});
+document.addEventListener('mousedown',()=>cur.classList.add('clicked'));
+document.addEventListener('mouseup',()=>cur.classList.remove('clicked'));
+document.querySelectorAll('a,button,.swatch,.faq-q,.gallery-item,.tcard').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{curR.style.width='50px';curR.style.height='50px';curR.style.borderColor='var(--pink)'});
+  el.addEventListener('mouseleave',()=>{curR.style.width='36px';curR.style.height='36px';curR.style.borderColor='var(--pink)'});
+});
+
+// ── NAV ──────────────────────────────────────
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>50);
+  document.getElementById('backTop').classList.toggle('visible',window.scrollY>400);
+  // active nav link
+  const secs=['inicio','servicios','visualizer','order','faq','contacto'];
+  secs.forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    const r=el.getBoundingClientRect();
+    const link=document.querySelector(`nav a[href="#${id}"]`);
+    if(link) link.classList.toggle('active',r.top<=120&&r.bottom>120);
+  });
+});
+
+// ── TYPING ANIMATION ─────────────────────────
+const words=['Bordados Premium','Impresión DTF','Sublimación Full Color','Uniformes Empresariales','Gorras Personalizadas','Entregas a Toda Panamá'];
+let wi=0,ci=0,del=false;
+function typeNext(){
+  const w=words[wi];
+  const el=document.getElementById('typed');
+  if(!el)return;
+  if(!del){
+    ci++;el.textContent=w.slice(0,ci);
+    if(ci===w.length){del=true;setTimeout(typeNext,1800);return}
+    setTimeout(typeNext,60);
+  }else{
+    ci--;el.textContent=w.slice(0,ci);
+    if(ci===0){del=false;wi=(wi+1)%words.length;setTimeout(typeNext,400);return}
+    setTimeout(typeNext,35);
+  }
+}
+typeNext();
+
+// ── SCROLL REVEAL ────────────────────────────
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.1});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s').forEach(el=>ro.observe(el));
+
+// ── ANIMATED COUNTERS ────────────────────────
+const co=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target;
+    const target=parseInt(el.dataset.count);
+    const dec=el.dataset.dec?parseInt(el.dataset.dec):0;
+    let current=0;
+    const dur=1800,steps=60,inc=target/steps;
+    const suffix=target===1900?'+':target===46?'★':'';
+    const t=setInterval(()=>{
+      current=Math.min(current+inc,target);
+      el.textContent=dec?(current/10).toFixed(1)+suffix:Math.floor(current)+suffix;
+      if(current>=target)clearInterval(t);
+    },dur/steps);
+    co.unobserve(el);
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+// ── SHIRT COLOR PICKER ───────────────────────
+function setShirtColor(hex,name){
+  document.getElementById('shirt-shape').style.fill=hex;
+  document.querySelectorAll('.swatch').forEach(s=>s.classList.toggle('active',s.title===name));
+  document.getElementById('color-name').textContent=name+' seleccionado';
+}
+
+// ── PRICE CALC ───────────────────────────────
+let delCost=12;
+function calcTotal(){
+  const q=parseInt(document.getElementById('qty').value)||1;
+  const sc=parseInt(document.getElementById('svc').value)||15;
+  const sub=(q*sc).toFixed(2);
+  const tot=(q*sc+delCost).toFixed(2);
+  document.getElementById('ps-sub').textContent='$'+sub;
+  document.getElementById('ps-del').textContent='$'+delCost+'.00';
+  document.getElementById('ps-tot').textContent='$'+tot;
+  document.getElementById('card-total').textContent='$'+tot;
+  const ya=document.getElementById('yb-amt');if(ya)ya.textContent='$'+tot;
+  const ys=document.getElementById('ystep-amt');if(ys)ys.textContent='$'+tot;
+}
+function chgQty(d){const e=document.getElementById('qty');e.value=Math.max(1,(parseInt(e.value)||1)+d);calcTotal()}
+function pickDel(t){delCost=t==='ex'?12:5;document.getElementById('dc-ex').classList.toggle('on',t==='ex');document.getElementById('dc-st').classList.toggle('on',t==='st');calcTotal()}
+function pickSz(btn){document.querySelectorAll('.sz').forEach(b=>b.classList.remove('on'));btn.classList.add('on')}
+function handleFile(i){if(i.files&&i.files[0])document.getElementById('ut').innerHTML='<strong style="color:var(--white)">'+i.files[0].name+'</strong><br><span style="color:var(--cyan);font-size:.72rem">✓ Diseño cargado</span>'}
+
+// ── MULTI-STEP FORM ──────────────────────────
+function goStep(n){
+  document.querySelectorAll('.snav').forEach(s=>s.classList.toggle('active',parseInt(s.dataset.step)===n));
+  document.querySelectorAll('.form-step').forEach(s=>s.classList.remove('active'));
+  const target=document.getElementById('step'+n);
+  if(target)target.classList.add('active');
+  if(n===3){calcTotal();buildQR()}
+}
+
+// ── PAYMENT ──────────────────────────────────
+function pickPay(m,btn){document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.pyf').forEach(f=>f.classList.remove('show'));document.getElementById('pf-'+m).classList.add('show')}
+
+function copyPhone(){
+  navigator.clipboard.writeText('66760054').catch(()=>{const t=document.createElement('textarea');t.value='66760054';document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t)});
+  const b=document.getElementById('cpybtn');b.textContent='✓ OK';b.classList.add('ok');
+  setTimeout(()=>{b.textContent='COPIAR';b.classList.remove('ok')},2500);
+}
+
+function buildQR(){
+  const c=document.getElementById('yqr');if(!c)return;
+  const ctx=c.getContext('2d');
+  const tmp=document.createElement('div');tmp.style.display='none';document.body.appendChild(tmp);
+  try{
+    new QRCode(tmp,{text:'50766760054',width:100,height:100,colorDark:'#3b2fc4',colorLight:'#fff'});
+    setTimeout(()=>{const img=tmp.querySelector('img')||tmp.querySelector('canvas');if(img){if(img.tagName==='CANVAS')ctx.drawImage(img,0,0,100,100);else{const i=new Image();i.onload=()=>ctx.drawImage(i,0,0,100,100);i.src=img.src}}if(document.body.contains(tmp))document.body.removeChild(tmp)},400);
+  }catch(e){
+    ctx.fillStyle='#3b2fc4';ctx.fillRect(0,0,100,100);
+    ctx.fillStyle='#ffd600';ctx.font='bold 11px monospace';ctx.textAlign='center';
+    ctx.fillText('6676-0054',50,50);ctx.fillText('YAPPY',50,70);
+    if(document.body.contains(tmp))document.body.removeChild(tmp);
+  }
+}
+
+function fmtCard(i){let v=i.value.replace(/\D/g,'').substring(0,16);i.value=v.replace(/(.{4})/g,'$1 ').trim();document.getElementById('cb-v').className='cbrand v'+(v.startsWith('4')?' lit':'');document.getElementById('cb-m').className='cbrand m'+(/^5[1-5]|^2[2-7]/.test(v)?' lit':'');document.getElementById('cb-a').className='cbrand a'+(/^3[47]/.test(v)?' lit':'')}
+function fmtExp(i){let v=i.value.replace(/\D/g,'');if(v.length>=3)v=v.substring(0,2)+' / '+v.substring(2,4);i.value=v}
+
+// ── NOTIFICATIONS ────────────────────────────
+function getOrderData(pay){
+  return{
+    fn:document.getElementById('fn').value||'N/A',
+    em:document.getElementById('em').value||'N/A',
+    ph:document.getElementById('ph').value||'N/A',
+    addr:document.getElementById('addr').value||'N/A',
+    notes:document.getElementById('notes').value||'Sin notas',
+    qty:document.getElementById('qty').value||'1',
+    svc:(()=>{const e=document.getElementById('svc');return e.options[e.selectedIndex].text})(),
+    tipo:document.getElementById('tipo').value||'No especificado',
+    del:delCost===12?'Express (1-3 días, $12)':'Estándar (5-7 días, $5)',
+    pay,
+    total:(()=>{const q=parseInt(document.getElementById('qty').value)||1;const sc=parseInt(document.getElementById('svc').value)||15;return(q*sc+delCost).toFixed(2)})()
+  };
+}
+
+function sendNotifications(d){
+  // Email
+  try{emailjs.send(EJS_SID,EJS_TID,{to_email:'rodrigosang26@gmail.com',customer_name:d.fn,reply_to:d.em,customer_phone:d.ph,service:d.svc,quantity:d.qty,delivery:d.del,payment:d.pay,total:'$'+d.total,address:d.addr,notes:d.notes,order_date:new Date().toLocaleString('es-PA')}).then(()=>console.log('📧 Email sent')).catch(e=>console.warn('EmailJS:',e))}catch(e){}
+  // WhatsApp
+  const msg='🧵 *NUEVO PEDIDO — BORDADOS 507* 🧵\n\n👤 *Cliente:* '+d.fn+'\n📧 *Email:* '+d.em+'\n📱 *Tel:* '+d.ph+'\n\n👕 *Servicio:* '+d.svc+'\n🎽 *Prenda:* '+d.tipo+'\n📦 *Cantidad:* '+d.qty+'\n🚚 *Envío:* '+d.del+'\n💳 *Pago:* '+d.pay+'\n💵 *Total:* $'+d.total+'\n\n📍 *Dirección:*\n'+d.addr+'\n\n📝 '+d.notes+'\n\n✅ _'+new Date().toLocaleString('es-PA')+'_';
+  window.open('https://wa.me/'+BIZ_PHONE+'?text='+encodeURIComponent(msg),'_blank');
+}
+
+function submitOrder(){
+  const fn=document.getElementById('fn').value,em=document.getElementById('em').value;
+  if(!fn||!em){alert('Por favor ingresa tu nombre y correo en el Paso 1.');return}
+  sendNotifications(getOrderData('Yappy'));
+  showToast('¡PEDIDO ENVIADO! COMPLETA EL PAGO POR YAPPY 🎉');
+}
+
+function submitCardOrder(){
+  const fn=document.getElementById('fn').value,em=document.getElementById('em').value;
+  if(!fn||!em){alert('Por favor completa el Paso 1 primero.');return}
+  const cn=document.getElementById('cnum').value.replace(/\s/g,'');
+  if(cn.length<13){alert('Por favor ingresa un número de tarjeta válido.');return}
+  if(!document.getElementById('cexp').value){alert('Por favor ingresa la fecha de vencimiento.');return}
+  if(!document.getElementById('ccvv').value){alert('Por favor ingresa el CVV.');return}
+  sendNotifications(getOrderData('Tarjeta'));
+  showToast('¡PAGO CONFIRMADO! TE CONTACTAMOS PRONTO 🎉');
+}
+
+// ── FAQ ───────────────────────────────────────
+function toggleFaq(q){const item=q.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open')}
+
+// ── TESTIMONIALS ─────────────────────────────
+function scrollT(i){const t=document.getElementById('ttrack');t.scrollTo({left:i*356,behavior:'smooth'});document.querySelectorAll('.tdot').forEach((d,j)=>d.classList.toggle('active',j===i))}
+setInterval(()=>{const t=document.getElementById('ttrack');const i=Math.round(t.scrollLeft/356);scrollT((i+1)%5)},5000);
+
+// ── CUSTOMER SERVICE CHAT ─────────────────────
+let csOpen=false;
+function toggleCS(){csOpen=!csOpen;document.getElementById('csp').classList.toggle('open',csOpen)}
+const csReplies={'precio':['Los bordados comienzan desde <strong>$15 c/u</strong> 💰','El DTF desde $12 c/u y sublimación desde $14 c/u. Para volúmenes de 10+ tenemos descuentos. ¿Cuántas prendas necesitas?'],'envio':['Tenemos 2 opciones de envío 🚚','⚡ <strong>Express:</strong> 1-3 días hábiles · $12<br>📦 <strong>Estándar:</strong> 5-7 días hábiles · $5<br>Enviamos a toda Panamá con seguimiento.'],'dtf':['¡Sí hacemos DTF! 🖨️','Direct to Film permite full color en cualquier tela, desde $12/unidad. Ideal para diseños complejos con muchos colores. ¿Quieres ver un ejemplo?'],'pedido':['Con gusto tomamos tu pedido! 📦','Puedes ordenar aquí mismo en la sección "Ordenar" o contáctanos directamente por WhatsApp al <strong style="color:var(--yellow)">6676-0054</strong>.']};
+function csReply(msg){
+  const m=msg.toLowerCase();
+  if(m.includes('precio')||m.includes('cuánto')||m.includes('costo')||m.includes('cobran'))return csReplies.precio;
+  if(m.includes('envio')||m.includes('envío')||m.includes('entrega')||m.includes('tarda'))return csReplies.envio;
+  if(m.includes('dtf')||m.includes('impresion')||m.includes('impresión'))return csReplies.dtf;
+  if(m.includes('pedido')||m.includes('ordenar')||m.includes('comprar')||m.includes('quiero'))return csReplies.pedido;
+  return[null,'¡Gracias por tu mensaje! Un agente te responderá pronto. Para atención inmediata escríbenos por <strong>WhatsApp al 6676-0054</strong>. 🎉'];
+}
+function addMsg(text,type){const box=document.getElementById('csmsgs');const d=document.createElement('div');d.className='cs-msg '+type;d.innerHTML=text;box.appendChild(d);box.scrollTop=box.scrollHeight}
+function csend(){const inp=document.getElementById('csinp');const msg=inp.value.trim();if(!msg)return;addMsg(msg,'user');inp.value='';const r=csReply(msg);setTimeout(()=>{if(r[0])addMsg(r[0],'bot');setTimeout(()=>addMsg(r[1],'bot'),600)},400)}
+function csQuick(t){addMsg(t,'user');const r=csReply(t);setTimeout(()=>{if(r[0])addMsg(r[0],'bot');setTimeout(()=>addMsg(r[1],'bot'),600)},400)}
+
+// ── TOAST ─────────────────────────────────────
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),6000)}
+
+// ── INIT ──────────────────────────────────────
+calcTotal();
+</script>
+</body>
+</html>
